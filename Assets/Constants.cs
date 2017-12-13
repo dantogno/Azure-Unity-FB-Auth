@@ -6,6 +6,7 @@
     public static readonly string ZumoString = "ZUMO-API-VERSION";
     public static readonly string ZumoVersion = "2.0.0";
     public static readonly string ZumoAuth = "X-ZUMO-AUTH";
+    public static readonly string ErrorOccurred = "Error occurred";
 }
 
 // TODO: Consider removing, as it seems to be in UnityWebRequest

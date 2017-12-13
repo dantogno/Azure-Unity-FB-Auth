@@ -162,12 +162,11 @@ public class TestSendHttpRequests : MonoBehaviour
 }
 
 [Serializable]
-public class CrashInfo
+public class CrashInfo : EasyTablesObjectBase
 {
     public float x;
     public float y;
     public float z;
-    public string id;
 }
 
 [Serializable]
