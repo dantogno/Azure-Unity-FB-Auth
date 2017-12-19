@@ -8,14 +8,3 @@
     public static readonly string ZumoAuth = "X-ZUMO-AUTH";
     public static readonly string ErrorOccurred = "Error occurred";
 }
-
-// TODO: Consider removing, as it seems to be in UnityWebRequest
-public enum HttpMethod
-{
-    Post,
-    Get,
-    Patch,
-    Delete,
-    Put,
-    Merge
-}

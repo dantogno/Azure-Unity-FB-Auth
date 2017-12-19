@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Facebook.Unity;
 using System;
 
@@ -10,6 +8,7 @@ public class FacebookLogin : MonoBehaviour
     private string accessToken;
     private static FacebookLogin instance;
 
+    #region Properties
     public static FacebookLogin Instance
     {
         get
@@ -35,6 +34,7 @@ public class FacebookLogin : MonoBehaviour
             accessToken = value;
         }
     }
+    #endregion
 
     private void Awake()
     {
@@ -50,13 +50,19 @@ public class FacebookLogin : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Call this to log into Facebook via the Facebook SDK and get an access token.
+    /// </summary>
     public void LogInUser()
     {
         // If in the editor, you will need to test with a debug access token.
         // This can be found here: https://developers.facebook.com/tools/accesstoken/
+        // The Facebook SDK only supports Android, iOS, and WebGL platforms. 
+        // Alternatively you can make a Facebook build to support PC via FB Gameroom:
+        // https://unity3d.com/partners/facebook/gameroom
 #if (UNITY_EDITOR)
         Debug.Log("Using debug access token. It does expire!");
-        accessToken = "EAAXtZARqNfmcBAGSO4eoMEKwedfVsjfQhekNJ1GRZBlZAu6UyiYreZAs5yMYnFWZBX5kuyNTYHJuPKmnZCSFpy460m0pZA1XinSbyFfJHSXF72HZAqOr1dXpy7kaH30eMykVdvN0M2a5pbQ1CdMmqzPUaQ0vwHrwnexgnHaRlPL6hzIBY7SQAMkCuVfjTvf1lSMZD";
+        accessToken = "EAAXtZARqNfmcBABRCfgQ9KXP8wBZBOT3mf2LY5EkSOPppcM1LlhGeKYf718s7Q2JoI3UfOjQFOxCkH7LqMfPhPv6Rv9WC3R52yZCsbllbskiSnuJTJukCJ8AdYYAoo0ADIMB0MBIroDI5qscSSGIo3zb050UAXvZCl5cncmprH118jBISjrtWCAtj6cyoQAZD";
         if (LoggedIn != null) LoggedIn.Invoke();
 #else
         var perms = new List<string>() { "public_profile", "email", "user_friends" };
@@ -64,6 +70,7 @@ public class FacebookLogin : MonoBehaviour
 #endif
     }
 
+    #region Facebook SDK callbacks
     private void InitCallback()
     {
         if (FB.IsInitialized)
@@ -76,7 +83,6 @@ public class FacebookLogin : MonoBehaviour
             Debug.Log("Failed to Initialize the Facebook SDK");
         }
     }
-
     private void AuthCallback(ILoginResult result)
     {
         if (FB.IsLoggedIn)
@@ -92,4 +98,5 @@ public class FacebookLogin : MonoBehaviour
             Debug.Log("User cancelled login");
         }
     }
+    #endregion
 }
