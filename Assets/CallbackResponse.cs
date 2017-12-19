@@ -24,5 +24,6 @@ public enum CallBackResult
     DeserializationFailure,
     NotFound,
     LocalException,
-    ResourceExists
+    ResourceExists,
+    Unauthorized
 }

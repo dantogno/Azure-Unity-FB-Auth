@@ -56,7 +56,7 @@ public class FacebookLogin : MonoBehaviour
         // This can be found here: https://developers.facebook.com/tools/accesstoken/
 #if (UNITY_EDITOR)
         Debug.Log("Using debug access token. It does expire!");
-        accessToken = "EAAXtZARqNfmcBAIcWxNFo5W91xFIcCRzqCp6sEIalZBvzAU7ZCmTzXoTHjDQUXlv40rsQnytRMUi6XcuaWyN7oFHqgtcJBU3uOJ9rbkciWy17r8XnKpnlOyOHaxqLhoYd8dDoXGKQXZC9mNyoKH3oDXOIhiCjFrB2OIlEEorRnj8mwwMBbyMe0nZCZCwnqn94ZD";
+        accessToken = "EAAXtZARqNfmcBAGSO4eoMEKwedfVsjfQhekNJ1GRZBlZAu6UyiYreZAs5yMYnFWZBX5kuyNTYHJuPKmnZCSFpy460m0pZA1XinSbyFfJHSXF72HZAqOr1dXpy7kaH30eMykVdvN0M2a5pbQ1CdMmqzPUaQ0vwHrwnexgnHaRlPL6hzIBY7SQAMkCuVfjTvf1lSMZD";
         if (LoggedIn != null) LoggedIn.Invoke();
 #else
         var perms = new List<string>() { "public_profile", "email", "user_friends" };

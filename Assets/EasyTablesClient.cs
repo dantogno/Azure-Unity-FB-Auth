@@ -51,11 +51,11 @@ public class EasyTablesClient : MonoBehaviour
         {
             yield return www.SendWebRequest();
 
-            var response = new CallbackResponse<T>();
+            var response = new CallbackResponse<List<T>>();
 
             if (WebRequestUtilities.IsWWWError(www))
             {
-                Debug.Log("Error: " + www.error);
+                Debug.Log("Error: " + www.error + " Response code: " + www.responseCode);
                 WebRequestUtilities.BuildResponseObjectOnFailure(response, www);
             }
             else if (www.downloadHandler != null) // all OK.
@@ -63,11 +63,9 @@ public class EasyTablesClient : MonoBehaviour
                 //let's get the new object that was created
                 try
                 {
-                    Debug.Log(www.downloadHandler.text);
-                    // T newObject = JsonUtility.FromJson<T>(www.downloadHandler.text);
-                    //Debug.Log("Got this back from the server: " + newObject.ToString());
-                    // response.Status = CallBackResult.Success;
-                    //response.Result = newObject;
+                    var array = JsonHelper.GetJsonArray<T>(www.downloadHandler.text);
+                    var listToReturn = new List<T>(array);
+                    response.Result = listToReturn;
                 }
                 catch (Exception ex)
                 {
@@ -75,7 +73,7 @@ public class EasyTablesClient : MonoBehaviour
                     response.Status = CallBackResult.DeserializationFailure;
                     response.Exception = ex;
                 }
-                //onGetAllEntriesCompleted(response);
+                onGetAllEntriesCompleted(response);
             }
         }
     }

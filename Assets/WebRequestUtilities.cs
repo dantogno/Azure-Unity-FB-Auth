@@ -43,18 +43,27 @@ public static class WebRequestUtilities
 
     public static void BuildResponseObjectOnFailure(CallbackResponse response, UnityWebRequest www)
     {
-        if (www.responseCode == 404L)
-            response.Status = CallBackResult.NotFound;
-        else if (www.responseCode == 409L)
-            response.Status = CallBackResult.ResourceExists;
-        else
-            response.Status = CallBackResult.Failure;
+        switch (www.responseCode)
+        {
+            case 404L:
+                response.Status = CallBackResult.NotFound;
+                break;
+            case 409L:
+                response.Status = CallBackResult.ResourceExists;
+                break;
+            case 401L:
+                response.Status = CallBackResult.Unauthorized;
+                break;
+            default:
+                response.Status = CallBackResult.Failure;
+                break;
+        }
 
         string errorMessage = www.error;
         if (errorMessage == null && www.downloadHandler != null && !string.IsNullOrEmpty(www.downloadHandler.text))
             errorMessage = www.downloadHandler.text;
         else
-            errorMessage = Constants.ErrorOccurred;
+            errorMessage = Constants.ErrorOccurred + " " + response.Status;
 
         Exception ex = new Exception(errorMessage);
         response.Exception = ex;

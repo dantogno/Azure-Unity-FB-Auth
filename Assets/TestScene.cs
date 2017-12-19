@@ -43,8 +43,18 @@ public class TestScene : MonoBehaviour
         insertButton.interactable = true;
         EasyTablesClient.Instance.GetAllEntries<CrashInfo>
             (
-                response => { }
-            
+                response => 
+                {
+                    if (response.Status == CallBackResult.Success)
+                    {
+                        string result = response.Result.ToString();
+                        Debug.Log(result);
+                    }
+                    else
+                    {
+                        Debug.Log(response.Exception.Message);
+                    }
+                }            
             );
     }
 

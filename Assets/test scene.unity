@@ -478,7 +478,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1110782655}
+      - m_Target: {fileID: 1788947808}
         m_MethodName: PressedLoginButton
         m_Mode: 1
         m_Arguments:
@@ -524,46 +524,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 960312123}
---- !u!1 &1110782654
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1110782656}
-  - component: {fileID: 1110782655}
-  m_Layer: 0
-  m_Name: FacebookLogin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1110782655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1110782654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53b664d73b95eec4c99622c55a628ac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1110782656
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1110782654}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1186017001
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,6 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f88615a198de714095de4f2cc3764c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  insertButton: {fileID: 1186017003}
 --- !u!4 &1788947809
 Transform:
   m_ObjectHideFlags: 0
@@ -1057,8 +1018,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1946368108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 677, y: 381, z: 0}
-  m_LocalScale: {x: 0.70520836, y: 0.70520836, z: 0.70520836}
+  m_LocalPosition: {x: 413.5, y: 232.5, z: 0}
+  m_LocalScale: {x: 0.43072918, y: 0.43072918, z: 0.43072918}
   m_Children:
   - {fileID: 1186017002}
   - {fileID: 960312124}
