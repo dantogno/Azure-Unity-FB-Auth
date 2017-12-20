@@ -1308,6 +1308,7 @@ MonoBehaviour:
   - {fileID: 228378676}
   - {fileID: 972112545}
   - {fileID: 1220725875}
+  loginButton: {fileID: 458097543}
 --- !u!1 &1745478445
 GameObject:
   m_ObjectHideFlags: 0

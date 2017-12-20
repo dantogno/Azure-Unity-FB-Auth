@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Facebook.Unity;
 using System;
+using System.Collections.Generic;
 
 public class FacebookLogin : MonoBehaviour 
 {

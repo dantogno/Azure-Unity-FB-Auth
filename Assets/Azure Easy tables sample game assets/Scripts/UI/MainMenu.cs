@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Facebook.Unity;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -7,11 +8,21 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private Button[] buttonsThatRequireLogin;
 
+    [SerializeField]
+    private Button loginButton;
+
     private void Start()
     {
-        foreach (var item in buttonsThatRequireLogin)
+        if (!FB.IsLoggedIn)
         {
-            item.interactable = false;
+            foreach (var item in buttonsThatRequireLogin)
+            {
+                item.interactable = false;
+            }
+        }
+        else
+        {
+            loginButton.interactable = false;
         }
     }
 
@@ -46,6 +57,8 @@ public class MainMenu : MonoBehaviour
         {
             item.interactable = true;
         }
+
+        loginButton.interactable = false;
     }
     private void OnEnable()
     {
