@@ -15,7 +15,6 @@ public class Heatmap : MonoBehaviour
     private void Start()
     {
         InitializeCrashList();
-        SpawnMarkersFromList();
     }
 
 
@@ -24,17 +23,17 @@ public class Heatmap : MonoBehaviour
         Debug.Log("Downloading crash data from Azure...");
         EasyTablesClient.Instance.GetAllEntries<CrashInfo>
         (
-            response =>
+            serverResponse =>
             {
-                if (response.Status == CallBackResult.Success)
+                if (serverResponse.Status == CallBackResult.Success)
                 {
                     Debug.Log("All crashes downloaded.");
-                    crashesFromServer = response.Result;
+                    crashesFromServer = serverResponse.Result;
                     SpawnMarkersFromList();
                 }
                 else
                 {
-                    Debug.Log(response.Exception.Message);
+                    Debug.Log(serverResponse.Exception.Message);
                 }
             }
         );       
@@ -44,7 +43,7 @@ public class Heatmap : MonoBehaviour
         foreach (var item in crashesFromServer)
         {
             GameObject marker = GameObject.Instantiate(markerPrefab);
-            marker.transform.position = new Vector3 { x = item.X, y = item.Y, z = item.Z };
+            marker.transform.position = new Vector3 { x = item.x, y = item.y, z = item.z };
         }
     }
 

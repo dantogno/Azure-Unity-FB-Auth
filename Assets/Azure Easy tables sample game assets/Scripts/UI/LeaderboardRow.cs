@@ -26,7 +26,7 @@ public class LeaderboardRow : MonoBehaviour
             highScoreInfo = value;
             nameText.text = highScoreInfo.Name;       
             TimeSpan timeSpan = TimeSpan.FromSeconds(highScoreInfo.Time);
-            timeText.text = timeSpan.ToString(@"mm\:ss\:ff");
+            timeText.text = timeSpan.Minutes + ":" + timeSpan.Seconds + ":" + timeSpan.Milliseconds;//timeSpan.ToString(@"mm\:ss\:ff");
         }
     }
 }

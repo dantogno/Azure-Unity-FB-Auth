@@ -20,7 +20,7 @@ public class Checkpoint : MonoBehaviour
 
     public static event Action RaceFinished;
 
-    public bool IsEnabled { get; set; } = false;
+    public bool IsEnabled { get; set; }
 
     private bool isRaceFinished = false;
 

@@ -10,10 +10,11 @@ public class LeaderboardMenu : MonoBehaviour
         SceneManager.LoadScene("MenuScene");
     }
 
-    public async void ResetButtonClicked()
+    public void ResetButtonClicked()
     {
-        await Leaderboard.DeleteAllEntriesAsync();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // TODO: support delete!
+        //await Leaderboard.DeleteAllEntriesAsync();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

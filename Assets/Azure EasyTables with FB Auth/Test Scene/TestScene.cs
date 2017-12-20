@@ -25,20 +25,21 @@ public class TestScene : MonoBehaviour
     }
     public void ClickedInsertButton()
     {
+        // TODO: swtich back to test data.
         EasyTablesClient.Instance.Insert<TestPlayerData>(
-            new TestPlayerData { name = "George", highScore = 999 }, 
-            insertResponse =>
+            new TestPlayerData { name = "George", highScore = 999 },
+            serverResponse =>
             {
-                if (insertResponse.Status == CallBackResult.Success)
+                if (serverResponse.Status == CallBackResult.Success)
                 {
                     string result = "Insert completed";
                     Debug.Log(result);
-                    outputText.text += "\n" + result + "\n" + insertResponse.Result.name + " inserted.";
+                    outputText.text += "\n" + result + "\n" + serverResponse.Result.id + " inserted.";
                 }
                 else
                 {
-                    Debug.Log(insertResponse.Exception.Message);
-                    outputText.text += "\n" + insertResponse.Exception.Message;
+                    Debug.Log(serverResponse.Exception.Message);
+                    outputText.text += "\n" + serverResponse.Exception.Message;
                 }
             }
         );
@@ -47,19 +48,19 @@ public class TestScene : MonoBehaviour
     {
         EasyTablesClient.Instance.GetAllEntries<TestPlayerData>
            (
-               response =>
+               serverResponse =>
                {
-                   if (response.Status == CallBackResult.Success)
+                   if (serverResponse.Status == CallBackResult.Success)
                    {
-                       string result = response.Result.ToString();
+                       string result = serverResponse.Result.ToString();
                        Debug.Log(result);
                        outputText.text += "\n" + "Get All Entries succeeded." + "\n" + result + 
-                       " Count: " + response.Result.Count;
+                       " Count: " + serverResponse.Result.Count;
                    }
                    else
                    {
-                       Debug.Log(response.Exception.Message);
-                       outputText.text += "\n" + response.Exception.Message;
+                       Debug.Log(serverResponse.Exception.Message);
+                       outputText.text += "\n" + serverResponse.Exception.Message;
                    }
                }
            );

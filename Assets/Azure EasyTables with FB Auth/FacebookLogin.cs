@@ -62,7 +62,7 @@ public class FacebookLogin : MonoBehaviour
         // https://unity3d.com/partners/facebook/gameroom
 #if (UNITY_EDITOR)
         Debug.Log("Using debug access token. It does expire!");
-        accessToken = "EAAXtZARqNfmcBABRCfgQ9KXP8wBZBOT3mf2LY5EkSOPppcM1LlhGeKYf718s7Q2JoI3UfOjQFOxCkH7LqMfPhPv6Rv9WC3R52yZCsbllbskiSnuJTJukCJ8AdYYAoo0ADIMB0MBIroDI5qscSSGIo3zb050UAXvZCl5cncmprH118jBISjrtWCAtj6cyoQAZD";
+        accessToken = "EAAXtZARqNfmcBACHC96av5GPSbZAhH54SKKQrSBofmXYqny5ZAVZBEEsHGH7kv6j8ySjI0HGPFZAyqmoJ4sZCUTzrJkvMdKhDXEt1JuBZA4TnMbmK0sGMLC3twT3cNayDsRPrnbKIsjjBfTUooFTDVlROvlhiBYvn6oZCon45CbHUGks1sHJWeQyAAkPSrLVq9YZD";
         if (LoggedIn != null) LoggedIn.Invoke();
 #else
         var perms = new List<string>() { "public_profile", "email", "user_friends" };

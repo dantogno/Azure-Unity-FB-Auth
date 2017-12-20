@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class RecordCrashInfo : MonoBehaviour
@@ -46,9 +45,9 @@ public class RecordCrashInfo : MonoBehaviour
 
             newCrashes.Add(new CrashInfo
             {
-                X = collision.transform.position.x,
-                Y = collision.transform.position.y,
-                Z = collision.transform.position.z
+                x = collision.transform.position.x,
+                y = collision.transform.position.y,
+                z = collision.transform.position.z
             });
 
             if (spawnDebugMarkers && Debug.isDebugBuild)
@@ -80,16 +79,17 @@ public class RecordCrashInfo : MonoBehaviour
             foreach (var item in newCrashes)
             {
                 EasyTablesClient.Instance.Insert<CrashInfo>(item,
-                    insertResponse =>
+                    serverResponse =>
                     {
-                        if (insertResponse.Status == CallBackResult.Success)
+                        if (serverResponse.Status == CallBackResult.Success)
                         {
                             string result = "Insert completed";
                             Debug.Log(result);
                         }
                         else
                         {
-                            Debug.Log(insertResponse.Exception.Message);
+                            Debug.Log("Insert failed... "
+                                + serverResponse.Exception.Message);
                         }
                     }
                 );

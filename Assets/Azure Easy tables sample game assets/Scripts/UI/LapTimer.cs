@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,7 +21,8 @@ public class LapTimer : MonoBehaviour
         set
         {
             mostRecentScore = value;
-            AfterMostRecentScoreSet?.Invoke(mostRecentScore);
+            if (AfterMostRecentScoreSet != null)
+                AfterMostRecentScoreSet.Invoke(mostRecentScore);
         }
     }
 
@@ -44,8 +42,7 @@ public class LapTimer : MonoBehaviour
         {
             lapTime += Time.deltaTime;
             TimeSpan timeSpan = TimeSpan.FromSeconds(lapTime);
-
-            timeText.text = timeSpan.ToString(@"mm\:ss\:ff");
+            timeText.text = timeSpan.Minutes + ":" + timeSpan.Seconds + ":" + timeSpan.Milliseconds;
         }
     }
 

@@ -7,8 +7,8 @@ using UnityEngine.Networking;
 
 public class EasyTablesClient : MonoBehaviour 
 {
-     private const string url = "http://localhost:7071/api/";
-    //private const string url = "https://testmobilesdk.azurewebsites.net/api/";
+     //private const string url = "http://localhost:7071/api/";
+    private const string url = "https://testmobilesdk.azurewebsites.net/api/";
     private static EasyTablesClient instance;
 
     public static EasyTablesClient Instance

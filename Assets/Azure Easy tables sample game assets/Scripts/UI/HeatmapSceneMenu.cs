@@ -15,6 +15,7 @@ public class HeatmapSceneMenu : MonoBehaviour
 
     public void ClearButtonClicked()
     {
-        heatmap.DeleteCrashDataAsync();
+        // TODO: Support delete!
+        //heatmap.DeleteCrashDataAsync();
     }
 }
