@@ -73,8 +73,8 @@ public class EasyTablesClient : MonoBehaviour
                     response.Status = CallBackResult.DeserializationFailure;
                     response.Exception = ex;
                 }
-                onGetAllEntriesCompleted(response);
             }
+            onGetAllEntriesCompleted(response);
         }
     }
 
