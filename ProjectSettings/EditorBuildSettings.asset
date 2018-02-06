@@ -5,21 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Azure EasyTables with FB Auth/Test Scene/test scene.unity
+  - enabled: 1
+    path: Assets/Azure Easy tables with FB auth/Test Scene/test scene.unity
     guid: 2ef1d6afecd069a4f978b1e2a3f0c6a1
-  - enabled: 1
-    path: Assets/Azure Easy tables sample game assets/Scenes/MenuScene.unity
-    guid: 2531388426b6c1b4b94af809b58a41f4
-  - enabled: 1
-    path: Assets/Azure Easy tables sample game assets/Scenes/RaceScene.unity
-    guid: 317ab93f85cc459409e0c4926a1369de
-  - enabled: 1
-    path: Assets/Azure Easy tables sample game assets/Scenes/HeatmapScene.unity
-    guid: aa003c7469159e2459689a93d27450d8
-  - enabled: 1
-    path: Assets/Azure Easy tables sample game assets/Scenes/LeaderboardScene.unity
-    guid: a0d0af168b4f35244beef4fe1e587b89
   - enabled: 0
     path: Assets/FacebookSDK/Examples/MainMenu.unity
     guid: 7c38a8c9adc9d5c4b869612e4033ead8
+  - enabled: 0
+    path: Assets/Azure Easy tables with FB auth sample game assets/Scenes/MenuScene.unity
+    guid: 2531388426b6c1b4b94af809b58a41f4
+  - enabled: 0
+    path: Assets/Azure Easy tables with FB auth sample game assets/Scenes/RaceScene.unity
+    guid: 317ab93f85cc459409e0c4926a1369de
+  - enabled: 0
+    path: Assets/Azure Easy tables with FB auth sample game assets/Scenes/HeatmapScene.unity
+    guid: aa003c7469159e2459689a93d27450d8
+  - enabled: 0
+    path: Assets/Azure Easy tables with FB auth sample game assets/Scenes/LeaderboardScene.unity
+    guid: a0d0af168b4f35244beef4fe1e587b89

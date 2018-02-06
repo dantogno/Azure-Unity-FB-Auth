@@ -49,6 +49,12 @@ public class FacebookLogin : MonoBehaviour
             // Already initialized, signal an app activation App Event
             FB.ActivateApp();
         }
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
     }
 
     /// <summary>
