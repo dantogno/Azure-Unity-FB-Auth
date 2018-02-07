@@ -26,7 +26,7 @@ public static class WebRequestUtilities
 
         www.SetRequestHeader(Constants.Accept, Constants.ApplicationJson);
         www.SetRequestHeader(Constants.Content_Type, Constants.ApplicationJson);
-        www.SetRequestHeader(Constants.ZumoString, Constants.ZumoVersion);
+        //www.SetRequestHeader(Constants.ZumoString, Constants.ZumoVersion);
 
         if (!string.IsNullOrEmpty(json))
         {
