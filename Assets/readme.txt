@@ -1,0 +1,1 @@
+This package depends on the Facebook Unity SDK being added to the project! https://developers.facebook.com/docs/unity/
