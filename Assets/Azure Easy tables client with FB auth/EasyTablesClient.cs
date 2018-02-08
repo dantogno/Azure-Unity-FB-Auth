@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 public class EasyTablesClient : MonoBehaviour 
 {
     // Be sure to append "/api/" to the end of your Azure Function App URL!
-    private const string url = "https://testmobilesdk.azurewebsites.net/api/";
+    private const string url = "https://REPLACE_WITH_YOUR_FUNCTIONAPP_URL/api/";
     private static EasyTablesClient instance;
 
     public static EasyTablesClient Instance
