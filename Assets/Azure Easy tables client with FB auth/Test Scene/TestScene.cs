@@ -26,6 +26,7 @@ public class TestScene : MonoBehaviour
     public void ClickedInsertButton()
     {
         Debug.Log("Insert started...");
+        outputText.text += "\n" + "Insert started...";
         EasyTablesClient.Instance.Insert<TestPlayerData>(
             new TestPlayerData { name = "George", highScore = 999 },
             serverResponse =>
@@ -47,6 +48,7 @@ public class TestScene : MonoBehaviour
     public void ClickedGetAllEntriesButton()
     {
         Debug.Log("GetAllEntries Started...");
+        outputText.text += "\n" + "GetAllEntries Started...";
         EasyTablesClient.Instance.GetAllEntries<TestPlayerData>
            (
                serverResponse =>
