@@ -1,5 +1,4 @@
-﻿using Facebook.Unity;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +6,12 @@ using UnityEngine.Networking;
 
 public class EasyTablesClient : MonoBehaviour 
 {
-    // Be sure to append "/api/" to the end of your Azure Function App URL!
-    private const string url = "https://REPLACE_WITH_YOUR_FUNCTIONAPP_URL/api/";
+    // Update with your Azure Function App URL. Do not include a "/" at the end!
+    private const string url = "FUNCTION_APP_URL";
+    // Update with your Function App Host key.
+    // Don't use the _master key!
+    private const string hostKey = "FUNCTION_APP_HOST_KEY";
+
     private static EasyTablesClient instance;
 
     public static EasyTablesClient Instance
@@ -41,7 +44,7 @@ public class EasyTablesClient : MonoBehaviour
     private IEnumerator GetAllEntriesCoroutine<T>(Action<CallbackResponse<List<T>>> onGetAllEntriesCompleted)
         where T : EasyTablesObjectBase
     {
-        string functionUrl = url + "GetAllEntries";
+        string functionUrl = url + "/api/GetAllEntries?code=" + hostKey;
 
         // Server expects a json arrary with the format:
         // [{"access_token":"value"},{"tableName":"value"}]
@@ -81,7 +84,7 @@ public class EasyTablesClient : MonoBehaviour
     private IEnumerator InsertCoroutine<T>(T instance, Action<CallbackResponse<T>> onInsertCompleted)
         where T : EasyTablesObjectBase
     {
-        string functionUrl = url + "Insert";
+        string functionUrl = url + "/api/Insert?code=" + hostKey;
 
         // Server expects a json arrary with the format:
         // [{"access_token":"value"},{"tableName":"value"},{instanceJson}]
